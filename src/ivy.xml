@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<ivy-module version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+  <info organisation="brs" module="TaskTracker" />
+  <configurations>
+    <conf name="default" description="Default configuration" />
+    <conf name="runtime" description="The configuration needed for runtime" extends="default" />
+    <conf name="compile" description="The configuration needed to compile" extends="runtime" />
+    <conf name="test" description="The configuration needed to run the tests" extends="runtime" />
+  </configurations>
+  <dependencies>
+    <dependency org="commons-logging" name="commons-logging" rev="1.+" conf="default"/>
+    <dependency org="junit" name="junit" rev="4.+" conf="compile,test->default" />
+    <dependency org="org.mockito" name="mockito-all" rev="1.8.4"/>
+  </dependencies>
+</ivy-module>
